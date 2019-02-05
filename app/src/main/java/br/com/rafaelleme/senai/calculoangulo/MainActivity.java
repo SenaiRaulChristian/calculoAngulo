@@ -3,6 +3,7 @@ package br.com.rafaelleme.senai.calculoangulo;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         rbCosseno.setOnClickListener(this);
         rbTang.setOnClickListener(this);
         btCalcular.setOnClickListener(this);
+
+        Log.i("SENAI", "Esse é o meu primeiro LOG");
     }
 
     public double calcularSeno(double angulo){
@@ -67,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         digAlerta = new AlertDialog.Builder( this).create();
         digAlerta.setTitle(titulo);
         //String valorFormatado = String.format("0.2%", valorCalculado);
-        DecimalFormat format = new DecimalFormat( "0.0002");
+        DecimalFormat format = new DecimalFormat( "0.0000");
         String valorFormatado = format.format(valorCalculado);
         digAlerta.setMessage(String.valueOf(valorFormatado));
         digAlerta.show();
